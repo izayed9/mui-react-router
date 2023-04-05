@@ -1,4 +1,5 @@
-import { useRoutes } from 'react-router-dom';
+
+import { Navigate,useRoutes } from 'react-router-dom';
 // layouts
 // import DashboardLayout from './layouts/dashboard';
 // import SimpleLayout from './layouts/simple';
@@ -11,6 +12,12 @@ import BlogPage from './pages/BlogPage';
 // import DashboardAppPage from './pages/DashboardAppPage';
 
 // ----------------------------------------------------------------------
+import BlogMessage from './pages/BlogMessage';
+import DashBoard from './pages/DashBoard';
+import DashboardMessages from './pages/DashboardMessages';
+import DashboardTasks from './pages/DashboardTasks';
+import Products from './pages/Products';
+
 
 export default function Router() {
   const routes = useRoutes([
@@ -42,9 +49,29 @@ export default function Router() {
     //   element: <Navigate to="/404" replace />,
     // },
     {
-      path: "/",
-      element: <BlogPage/>,
+      path: "/blog",
+      element: <BlogPage />,
+      children: [
+        {
+          path: "",
+          element: <BlogMessage />,
+        },
+      ]
     },
+    {
+      path: "/dashboard",
+      element: <DashBoard />,
+      children: [
+        { element: <Navigate to="/dashboard/messages" />, index: true },
+        {
+          path: "messages",
+          element: <DashboardMessages />,
+        },
+        { path: "tasks", element: <DashboardTasks /> },
+        { path: "product", element: <Products /> },
+      ]
+
+    }
   ]);
 
   return routes;
