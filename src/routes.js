@@ -5,7 +5,7 @@ import { Navigate,useRoutes } from 'react-router-dom';
 // import SimpleLayout from './layouts/simple';
 //
 import BlogPage from './pages/BlogPage';
-import NameGenarate from './pages/NameGenarate';
+// import NameGenarate from './pages/NameGenarate';
 // import UserPage from './pages/UserPage';
 // import LoginPage from './pages/LoginPage';
 // import Page404 from './pages/Page404';
