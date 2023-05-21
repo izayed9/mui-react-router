@@ -22,6 +22,11 @@ const navConfig = [
     icon: icon('ic_cart'),
   },
   {
+    title: 'option',
+    path: '/option',
+    icon: icon('ic_lock'),
+  },
+  {
     title: 'blog',
     path: '/dashboard/blog',
     icon: icon('ic_blog'),
@@ -31,6 +36,7 @@ const navConfig = [
     path: '/login',
     icon: icon('ic_lock'),
   },
+ 
   {
     title: 'Not found',
     path: '/404',
